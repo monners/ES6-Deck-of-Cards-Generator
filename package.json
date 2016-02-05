@@ -5,16 +5,23 @@
   "repository": {
     "type": "git"
   },
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register src/test/spec.deck.js -w"
+  },
   "devDependencies": {
+    "babel-core": "^6.4.5",
+    "babel-preset-es2015": "^6.3.13",
     "babelify": "~5.0.3",
     "browser-sync": "^1.7.1",
     "browserify": "^6.3.3",
+    "chai": "^3.5.0",
     "gulp": "~3.8.10",
     "gulp-rename": "^1.2.0",
     "lodash": "^2.4.1",
+    "mocha": "^2.4.5",
     "rimraf": "~2.2.8",
-    "watchify": "^2.1.1",
-    "vinyl-source-stream": "^1.0.0"
+    "vinyl-source-stream": "^1.0.0",
+    "watchify": "^2.1.1"
   },
   "author": "Joshua Moncrieff",
   "license": "MIT"
