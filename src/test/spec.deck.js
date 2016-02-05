@@ -29,3 +29,12 @@ describe('dealCard', () => {
         expect(remainingCardIndexes.indexOf(card.index)).to.equal(-1);
     });
 });
+
+describe('_range', () => {
+    it('Should return an array populated with all values between from and to', () => {
+        let deck = new Deck;
+        expect(deck._range(0, 51).length).to.equal(52);
+        expect(deck._range(10, 11)[1]).to.equal(11);
+
+    });
+});
