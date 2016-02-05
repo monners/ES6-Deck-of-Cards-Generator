@@ -6,7 +6,7 @@ class Deck {
     }
 
     _populate() {
-        this._cards = this._range(0, 52);
+        this._cards = this._range(0, 52).map((card, i) => this._constructCard(i));
     }
 
     _range(from, to) {
@@ -41,7 +41,7 @@ class Deck {
     }
 
     dealCard() {
-        return this._cardsLeft() ? this._constructCard(this._cards.pop()) : null;
+        return this._cardsLeft() ? this._cards.pop() : null;
     }
 }
 
