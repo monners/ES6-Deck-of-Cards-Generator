@@ -1,5 +1,6 @@
 import { expect } from 'chai';
 import { Deck } from '../model/Deck.js';
+import { arrayFromRange } from '../utils/Utils.js';
 
 describe('Deck', () => {
     it('Should have a length of 52', () => {
@@ -30,11 +31,10 @@ describe('dealCard', () => {
     });
 });
 
-describe('_range', () => {
+describe('arrayFromRange', () => {
     it('Should return an array populated with all values between from and to', () => {
         let deck = new Deck;
-        expect(deck._range(0, 51).length).to.equal(52);
-        expect(deck._range(10, 11)[1]).to.equal(11);
-
+        expect(arrayFromRange(0, 51).length).to.equal(52);
+        expect(arrayFromRange(10, 11)[1]).to.equal(11);
     });
 });

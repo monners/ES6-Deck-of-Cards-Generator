@@ -1,4 +1,4 @@
-import {Deck} from './model/Deck';
+import { Deck } from './model/Deck';
 
 global.app = function () {
     let deck = new Deck;

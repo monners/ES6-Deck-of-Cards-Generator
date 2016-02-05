@@ -55,7 +55,7 @@ gulp.task('watch', ['build-persistent'], function() {
   });
 
   getBundler().on('update', function() {
-    gulp.start('build-persistent')
+    gulp.start('build-persistent');
   });
 });
 

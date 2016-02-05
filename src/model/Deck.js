@@ -1,3 +1,5 @@
+import { arrayFromRange } from '../utils/Utils.js';
+
 class Deck {
     constructor() {
         this._cards = [];
@@ -6,7 +8,7 @@ class Deck {
     }
 
     _populate() {
-        this._cards = this._range(0, 51).map((card, i) => this._constructCard(i));
+        this._cards = arrayFromRange(0, 51).map((card, i) => this._constructCard(i));
     }
 
     _range(from, to) {
