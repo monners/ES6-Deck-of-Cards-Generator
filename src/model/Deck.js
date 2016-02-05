@@ -6,7 +6,7 @@ class Deck {
     }
 
     _populate() {
-        this._cards = this._range(0, 51);
+        this._cards = this._range(0, 52);
     }
 
     _range(from, to) {
@@ -34,6 +34,7 @@ class Deck {
         const ranks = ['Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace'];
 
         return {
+            index: i,
             suit: (() => suits[i % 4])(),
             rank: (() => ranks[i % 13])()
         };
