@@ -6,11 +6,11 @@ class Deck {
     }
 
     _populate() {
-        this._cards = this._range(0, 52).map((card, i) => this._constructCard(i));
+        this._cards = this._range(0, 51).map((card, i) => this._constructCard(i));
     }
 
     _range(from, to) {
-        return Array.from(new Array(to - from)).map((x, i) => i + from);
+        return Array.from(new Array(to - from + 1)).map((x, i) => i + from);
     }
 
     _shuffle() {
