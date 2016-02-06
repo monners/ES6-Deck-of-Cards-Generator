@@ -4,20 +4,37 @@ class Deck {
     constructor() {
         this._cards = [];
         this._populate();
-        this._shuffle();
+        this.shuffle();
     }
 
     _populate() {
         this._cards = arrayFromRange(0, 51).map((card, i) => this._constructCard(i));
     }
 
-    _range(from, to) {
-        return Array.from(new Array(to - from + 1)).map((x, i) => i + from);
+    _constructCard(i) {
+        const suits = ['Club', 'Diamond', 'Heart', 'Spade'];
+        const ranks = ['Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace'];
+
+        return {
+            index: i,
+            suit: suits[i % 4],
+            rank: ranks[i % 13]
+        };
     }
 
-    _shuffle() {
+    hasCards() {
+        return this._cards.length > 0;
+    }
+
+    cardsLeft() {
+        return this._cards.length;
+    }
+
+    shuffle() {
         let i = this._cards.length, j, temp;
-        if (i === 0) return false;
+        if (i === 0) {
+            return false;
+        }
 
         while (--i) {
             j = Math.floor( Math.random() * (i + 1) );
@@ -27,23 +44,8 @@ class Deck {
         }
     }
 
-    _cardsLeft() {
-        return this._cards.length > 0;
-    }
-
-    _constructCard(i) {
-        const suits = ['Club', 'Diamond', 'Heart', 'Spade'];
-        const ranks = ['Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace'];
-
-        return {
-            index: i,
-            suit: (() => suits[i % 4])(),
-            rank: (() => ranks[i % 13])()
-        };
-    }
-
     dealCard() {
-        return this._cardsLeft() ? this._cards.pop() : null;
+        return this.hasCards() ? this._cards.pop() : null;
     }
 }
 
