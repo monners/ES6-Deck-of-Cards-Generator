@@ -6,7 +6,7 @@
     "type": "git"
   },
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register src/test/spec.deck.js -w"
+    "test": "mocha --compilers js:babel-core/register test/deckSpec.js -w"
   },
   "devDependencies": {
     "babel-core": "^6.4.5",
