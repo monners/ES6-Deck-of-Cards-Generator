@@ -26,7 +26,7 @@ class Deck {
         return this._cards.length > 0;
     }
 
-    cardsLeft() {
+    get cardsLeft() {
         return this._cards.length;
     }
 
