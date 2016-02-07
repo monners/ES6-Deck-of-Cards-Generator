@@ -29,12 +29,24 @@ describe('dealCard', () => {
         let remainingCardIndexes = deck._cards.map(card => card.index);
         expect(remainingCardIndexes.indexOf(card.index)).to.equal(-1);
     });
+
+    it('Should return null if no cards are left in the deck', () => {
+        let deck = new Deck();
+
+        while(!!deck._cards.length) {
+            deck.dealCard();
+        }
+
+        expect(deck.dealCard()).to.equal(null);
+    });
 });
 
 describe('arrayFromRange', () => {
     it('Should return an array populated with all values between from and to', () => {
-        let deck = new Deck();
+        // Check expected input yields correct length
         expect(arrayFromRange(0, 51).length).to.equal(52);
+        // Check extreme min input yields correct values at indexes
+        expect(arrayFromRange(10, 11)[0]).to.equal(10);
         expect(arrayFromRange(10, 11)[1]).to.equal(11);
     });
 });
