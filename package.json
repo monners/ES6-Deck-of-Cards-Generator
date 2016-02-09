@@ -6,6 +6,7 @@
     "type": "git"
   },
   "scripts": {
+    "start": "gulp serve",
     "test": "mocha --compilers js:babel-core/register test/deckSpec.js -w --reporter nyan"
   },
   "devDependencies": {
